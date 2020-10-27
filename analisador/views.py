@@ -6,3 +6,9 @@ from django.views.generic import TemplateView
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
+
+class AnalisePageView(TemplateView):
+    template_name = 'analise-grafico.html'
+
+class UploadArquivoPageView(TemplateView):
+    template_name = 'upload-arquivo.html'

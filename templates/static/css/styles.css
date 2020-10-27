@@ -1,0 +1,100 @@
+/* CSS */
+
+/* TELA DE LOGIN*/
+body
+{
+    background-color:#fdfdfd36;
+}
+
+/* SECTION É UMA DIV QUE ESTÁ EM TODA PÁGINA */
+section
+{
+    margin-top:100px;
+}
+
+/* SECTION PARA CRIAR A GRADE DO GRÁFICO COM COMENTÁRIOS */
+.sectionComentarios
+{
+    margin-top:0px;
+}
+
+/* RESPONSÁVEL PELA TELA DE CADASTRO E LOGIN */
+/* É UM CARD POR TRÁS DO FORMULÁRIO */
+.card
+{
+    margin: 0px auto;
+    width: 60%;
+}
+
+/* CARD BODY ESTÁ A FRENTE DE CARD */
+.card-body{
+    background-color:#ffffffd2;
+    padding:30px;
+}
+
+.btn-webiaus
+{
+    color:#000000;
+    background-color:#ffd828;
+    text-align:center;
+    display:block;
+    margin:0 auto;        
+}
+
+input[type=email]
+{
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    background: #ffffff; 
+}
+
+input[type=text]
+{
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    background: #ffffff; 
+}
+
+input[type=password]
+{
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    background: #ffffff; 
+}
+
+.title-login
+{
+    font-family: 'Times';
+    color: #000000;
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+/* TELA DE CADASTRO*/
+.h1-cadastro-usuario-webiaus{
+    text-align: center;
+    font-family: 'Times', cursive;
+    color: #000000;
+}
+
+/* COMENTÁRIO DO GRÁFICO */
+.comentariosGrafico
+{
+    overflow-y: scroll;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+/* NÃO CLICANDO NO GRÁFICO */
+.myChart1
+{
+    cursor: not-allowed;
+    margin-left: 10px; 
+    margin-top: 30px;
+    width: 400px;
+    height: 455px;
+    position: relative;
+}
