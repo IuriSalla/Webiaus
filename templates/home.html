@@ -2,6 +2,14 @@
 
 {% block title %}Webiaus{% endblock %}
 
+
+
 {% block content %}
-    Analise arquivo
+
+
+{% if user.is_authenticated %}
+    <h1>AUTENTICADO</h1>
+{% else %}
+<p>Efetue o Cadastro ou o Login</p>
+{% endif %}
 {% endblock %}

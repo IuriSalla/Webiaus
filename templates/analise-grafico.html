@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+    <head>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+
+        <script>
+            function pos(){
+                alert("Teste")
+            }
+            
+        </script>
+        
+
+        <meta charset="utf-8"><!-- formatação do texto -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- navegador microsoft EDGE -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"><!-- responsivo -->
+
+        <!-- Fontes -->
+        <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"><!--Fonte roboto  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- Fonte material icons   -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"><!-- Fonte material icons   -->
+        
+        <!-- FRAMEWORKS(CAIXAS DE FERRAMENTAS) DO CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <!-- CAMINHO DO CSS --> 
+        <link href="../static/css/styles.css" rel="stylesheet" type="text/css">
+        
+        <title>
+            WebiaUS
+        </title>
+    </head>
+      
+    <body>
+        <div>
+            <nav class="row navbar navbar-expand-lg navbar-dark bg-primary">
+                <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+                  <li class="nav-item">
+                    <a class="navbar-brand" href="login" style="color: antiquewhite; padding: 1px">Sair</a>
+                  </li>
+                </ul>    
+              </nav>
+    
+              <section class="sectionComentarios row">
+
+                <!-- CLICANDO NO LADO POSITIVO  DO GRÁFICO -->
+                <div class="myChart1 col-sm"> <!-- CHAMA O MÉTODO DO GRÁFICO -->
+                    <canvas id="myChart" width="200px" height="260px"></canvas> 
+                </div>
+
+                <div class="comentariosGrafico col-sm" align="center">
+                    <p>Comentários negativos? <a href="#">Clique aqui!</a></p>
+                    
+                    <table>
+        
+                        <!-- PRIMEIRA LINHA -->
+                        <tr>
+                            <td>
+                                Comentários negativos
+                            </td>
+                        </tr>        
+                    </table>
+                </div>
+
+                <div class="comentariosGrafico col-sm" align="center">
+                    <p>Comentários positivos? <a href="#">Clique aqui!</a></p>
+                    
+                    <table>
+        
+                        <!-- PRIMEIRA LINHA -->
+                        <tr>
+                            <td>
+                                Comentários positivos
+                            </td>
+                        </tr>        
+                    </table>
+                </div>
+
+                <script>
+                var ctx = document.getElementById('myChart').getContext('2d');
+                ctx.fillStyle="#7F7F00";
+                ctx.fillRect(0, 0, 150, 100);
+                var myChart = new Chart(ctx, {
+                    type: 'bar', // AQUI PODE MUDAR O TIPO DO GRÁFICO
+                        data: {
+                        labels: ['Comentários'],
+                        datasets: [
+                            {
+                                label: "Positivo",
+                                data: [40], // VARIAVEL RECEPTORA DOS DADOS DO SQL
+                                borderWidth: 0.5,
+                                backgroundColor: ['#CAFF70'],
+                            },
+                            {
+                                label: "Negativo",
+                                data: [30],
+                                borderWidth: 0.5,
+                                backgroundColor: '#CD5555',
+                                
+                    
+                            }
+                            ],
+                    },
+
+                    options: {
+                        tooltips: {
+                            mode: 'index',
+                                intersect: false
+                                },
+                        scales: {
+                            yAxes: [{
+                                scaleLabel: {
+                                display: true,
+                                labelString: "Quantidade"
+                            },
+                                ticks: {
+                                    autoSkip: false,
+                                    fontSize: 10,
+                                    beginAtZero: true
+                                }
+                            }]
+                        },
+                        legend: {
+                            labels: {
+                                boxWidth: 10
+                            },
+                            position: "bottom",              
+                        }
+                    }
+                });
+                </script>
+    
+              </section>
+        </div>
+    </body>
+</html>
