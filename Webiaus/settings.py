@@ -136,10 +136,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # Só precisa digitar a senha uma vez
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 
 # Não precisa de username
-ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USERNAME_REQUIRED = True
 
 # Método de autenticação: email
 ACCOUNT_AUTHENTICATION_METHOD = "email"
