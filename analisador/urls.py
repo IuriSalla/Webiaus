@@ -3,6 +3,8 @@ from . import views
 
 app_name = 'pages'
 
-urlpatterns = [path('', views.HomePageView.as_view(), name='home')]
-urlpatterns = [path('', views.AnalisePageView.as_view(), name='analise-grafico')]
-urlpatterns = [path('', views.UploadArquivoPageView.as_view(), name='upload-arquivo')]
+urlpatterns = [
+    path('', views.HomePageView.as_view(), name='home'),
+    path('analise-grafico/', views.AnalisePageView.as_view(), name='analise-grafico'),
+    path('upload-arquivo/', views.UploadArquivoPageView.as_view(), name='upload-arquivo'),
+]

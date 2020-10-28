@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Webiaus{% endblock %}
 
 {% block content %}
 
-{% if user.is_authenticated %}
-    <h1>AUTENTICADO</h1>{% url 'pages:upload-arquivo' %}
-    
-{% else %}
-<p>Efetue o Cadastro ou o Login</p>
-{% endif %}
+    {% if user.is_authenticated %}
+        <h1>AUTENTICADO</h1>   
+            
+    {% else %}
+        <p>Efetue o Cadastro ou o Login</p>
+    {% endif %}
 {% endblock %}
