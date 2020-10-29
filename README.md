@@ -1,4 +1,4 @@
-pip install allauth
+pip install django-allauth
 
 pip install django-crispy-forms
 
