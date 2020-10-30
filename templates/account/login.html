@@ -9,7 +9,13 @@
     <form method="post">
         {% csrf_token %}
         {{ form|crispy }}
-          <p><a href="{% url 'account_reset_password' %}">Esqueceu a Senha?</a></p>
+        <a href="{% url 'account_reset_password' %}">Esqueceu a Senha?</a>
+        <br>
+        <br>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <div class="g-recaptcha" data-sitekey="6LcIAd0ZAAAAAGWUDh9u_ObdV18A4YDqRVoH55bi" ></div>
+        <br>
+
         <button class="btn btn-success" type="submit">Entrar</button>
     </form>
 {% endblock %}
