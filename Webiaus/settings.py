@@ -21,6 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'rm3au1xot7r8vktowg#2dd)89+_9lv2alkk^_$62!a94_5$nn)'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LcIAd0ZAAAAAGI7cCKarVEpAm73sfdP2lRYW0Fe'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
