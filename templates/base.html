@@ -1,32 +1,40 @@
-<!-- {% load static %} -->
-<!DOCTYPE html>
+{% load static %}
+
+<!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!-- CAMINHO DO CSS --> 
-	<!-- <link href = "../css/styles.css" rel = "stylesheet" type = "text/css"> CSS3 -->
+    <!-- CAMINHO DO CSS E DA IMAGEM --> 
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
 
+    {% block styles %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
+
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand navbar-dark bg-dark mb-3">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'account_login' %}">Webiaus</a>
+                <a class="navbar-brand" href="{% url 'account_login' %}" >
+                    <img src="{% static 'img/favicon.png' %}" align="top" width="43px" height="36px" style="margin-right: 7px">
+                    <sub style="font-family: 'Times', cursive; font-size: large">Web I.A. US</sub>
+                </a>
                 <ul class="navbar-nav">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Sair</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}" >Sair</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Entrar</a>
+                        <a class="nav-link" href="{% url 'account_login' %}" style="font-family: 'Times', cursive; font-size: large">Entrar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Cadastro</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}" style="font-family: 'Times', cursive; font-size:large">Cadastro</a>
                     </li>
 
                     {% endif %}
@@ -35,7 +43,7 @@
         </nav>
     </header>
 
-    <main class="container">
+    <main class="container" style="padding: 0.5px">
         {% block content %}
         {% endblock %}
     </main>
