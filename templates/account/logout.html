@@ -3,10 +3,14 @@
 {% block title %}Sair{% endblock %}
 
 {% block content %}
-    <h2 style="font-family: 'Times', cursive">Sair</h2>
+<div align="center">
+    <h1 class="title-login">Sair</h2>
+    
     <p>Você tem certeza que deseja sair?</p>
     <form method="post" action="{% url 'account_logout' %}">
         {% csrf_token %}
-        <button class="btn btn-danger" type="submit">Sair</button>
+        <br>
+        <button class="btn btn-danger" type="submit" style="width: 170px">Sair</button>
     </form>
+</div>
 {% endblock %}

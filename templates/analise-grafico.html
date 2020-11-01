@@ -1,21 +1,9 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block title %}Upload Arquivo{% endblock %}
 
-
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
     <head>
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
-
-        <script>
-            function pos(){
-                alert("Teste")
-            }
-            
-        </script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>        
 
         <meta charset="utf-8"><!-- formatação do texto -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- navegador microsoft EDGE -->
@@ -30,25 +18,33 @@
         <!-- FRAMEWORKS(CAIXAS DE FERRAMENTAS) DO CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-        <!-- CAMINHO DO CSS --> 
-        <link href="../static/css/styles.css" rel="stylesheet" type="text/css">
-        
-        <title>
-            WebiaUS
-        </title>
+    <!-- CAMINHO DO CSS E DA IMAGEM --> 
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+
+    <title>Análise Rápida</title>
+
     </head>
       
     <body>
-        <div>
-            <nav class="row navbar navbar-expand-lg navbar-dark bg-primary">
-                <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-                  <li class="nav-item">
-                    <a class="navbar-brand" href="login" style="color: antiquewhite; padding: 1px">Sair</a>
-                  </li>
-                </ul>    
-              </nav>
-    
-              <section class="sectionComentarios row">
+
+    <header>
+        <nav class="navbar navbar-expand navbar-dark bg-dark mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'account_login' %}" >
+                    <img src="{% static 'img/favicon.png' %}" align="top" width="43px" height="36px" style="margin-right: 7px">
+                    <sub style="font-family: 'Times', cursive; font-size: large">Web I.A. US</sub>
+                </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}" style="font-family: 'Times', cursive; font-size: large">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+            <section class="sectionComentarios row">
 
                 <!-- CLICANDO NO LADO POSITIVO  DO GRÁFICO -->
                 <div class="myChart1 col-sm"> <!-- CHAMA O MÉTODO DO GRÁFICO -->
@@ -59,7 +55,7 @@
                     <p>Comentários negativos? <a href="#">Clique aqui!</a></p>
                     
                     <table>
-        
+
                         <!-- PRIMEIRA LINHA -->
                         <tr>
                             <td>
@@ -73,7 +69,7 @@
                     <p>Comentários positivos? <a href="#">Clique aqui!</a></p>
                     
                     <table>
-        
+
                         <!-- PRIMEIRA LINHA -->
                         <tr>
                             <td>
@@ -84,60 +80,59 @@
                 </div>
 
                 <script>
-                var ctx = document.getElementById('myChart').getContext('2d');
-                ctx.fillStyle="#7F7F00";
-                ctx.fillRect(0, 0, 150, 100);
-                var myChart = new Chart(ctx, {
-                    type: 'bar', // AQUI PODE MUDAR O TIPO DO GRÁFICO
-                        data: {
-                        labels: ['Comentários'],
-                        datasets: [
-                            {
-                                label: "Positivo",
-                                data: [40], // VARIAVEL RECEPTORA DOS DADOS DO SQL
-                                borderWidth: 0.5,
-                                backgroundColor: ['#CAFF70'],
-                            },
-                            {
-                                label: "Negativo",
-                                data: [30],
-                                borderWidth: 0.5,
-                                backgroundColor: '#CD5555',
-                                
-                    
-                            }
-                            ],
-                    },
-
-                    options: {
-                        tooltips: {
-                            mode: 'index',
-                                intersect: false
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    ctx.fillStyle="#7F7F00";
+                    ctx.fillRect(0, 0, 150, 100);
+                    var myChart = new Chart(ctx, {
+                        type: 'bar', // AQUI PODE MUDAR O TIPO DO GRÁFICO
+                            data: {
+                            labels: ['Comentários'],
+                            datasets: [
+                                {
+                                    label: "Positivo",
+                                    data: [40], // VARIAVEL RECEPTORA DOS DADOS DO SQL
+                                    borderWidth: 0.5,
+                                    backgroundColor: ['#CAFF70'],
                                 },
-                        scales: {
-                            yAxes: [{
-                                scaleLabel: {
-                                display: true,
-                                labelString: "Quantidade"
-                            },
-                                ticks: {
-                                    autoSkip: false,
-                                    fontSize: 10,
-                                    beginAtZero: true
+                                {
+                                    label: "Negativo",
+                                    data: [30],
+                                    borderWidth: 0.5,
+                                    backgroundColor: '#CD5555',
+                                    
+                        
                                 }
-                            }]
+                                ],
                         },
-                        legend: {
-                            labels: {
-                                boxWidth: 10
+
+                        options: {
+                            tooltips: {
+                                mode: 'index',
+                                    intersect: false
+                                    },
+                            scales: {
+                                yAxes: [{
+                                    scaleLabel: {
+                                    display: true,
+                                    labelString: "Quantidade"
+                                },
+                                    ticks: {
+                                        autoSkip: false,
+                                        fontSize: 10,
+                                        beginAtZero: true
+                                    }
+                                }]
                             },
-                            position: "bottom",              
+                            legend: {
+                                labels: {
+                                    boxWidth: 10
+                                },
+                                position: "bottom",              
+                            }
                         }
-                    }
-                });
+                    });
                 </script>
-    
-              </section>
+            </section>
         </div>
     </body>
 </html>

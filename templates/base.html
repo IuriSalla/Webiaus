@@ -3,6 +3,12 @@
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -11,6 +17,12 @@
     <!-- CAMINHO DO CSS E DA IMAGEM --> 
     <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/png">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"><!--Fonte roboto  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- Fonte material icons   -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"><!-- Fonte material icons   -->
+
 
     {% block styles %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
@@ -27,7 +39,7 @@
                 <ul class="navbar-nav">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}" >Sair</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}" style="font-family: 'Times', cursive; font-size: large">Sair</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -36,20 +48,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}" style="font-family: 'Times', cursive; font-size:large">Cadastro</a>
                     </li>
-
                     {% endif %}
                 </ul>
             </div>
         </nav>
     </header>
-
+    <br>
     <main class="container" style="padding: 0.5px">
-        {% block content %}
-        {% endblock %}
+        <div class="card"> <!--CAMPO 1 DE EMAIL -->
+            <div class="card-body">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
     </main>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
