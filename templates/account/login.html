@@ -9,7 +9,7 @@
     <form method="post">
         {% csrf_token %}
         {{ form|crispy }}
-        <a href="{% url 'account_reset_password' %}">Esqueceu a Senha?</a>
+        <a href="{% url 'account_reset_password' %}">Esqueceu a Senha?</a>  <!-- Onde fica indicado essa url? -->
         <br>
         <br>
         <script src='https://www.google.com/recaptcha/api.js'></script>
