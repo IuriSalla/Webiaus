@@ -12,15 +12,16 @@
             <h1 class="title-login">Análise Rápida</h1>
             <div> <!--CAMPO 1 DE EMAIL -->
                 <div>
-                <input class="form-control" placeholder="Upload de Arquivo" type="file" id="arquivo">
+                <input class="form-control" placeholder="Upload de Arquivo" type="file" id="arquivo" name="arquivo_csv"> 
                 </div>
             </div>
             <br>
+            <div align="center">
+                <button class="btn btn-primary" type="submit" style="margin: 0 30px; width: 170px">Analisar</button>
+            </div>
         </form>
 
-        <div align="center">
-            <button class="btn btn-primary" type="submit" style="margin: 0 30px; width: 170px">Analisar</button>
-        </div>
+        
     {% else %}
     <br>
         <div class="alert alert-danger" role="alert" align="center">
