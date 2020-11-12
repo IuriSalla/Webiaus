@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.HomePageView.as_view(), name='home'),
     path('analise-grafico/', views.AnaliseGraficoPageView.as_view(), name='analise-grafico'),
     path('upload-arquivo/', views.UploadArquivoPageView.as_view(), name="upload-arquivo")
+    #path('analise-grafico/',views.func_test, name = "func_test")
 ]
