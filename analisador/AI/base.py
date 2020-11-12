@@ -1,7 +1,7 @@
-from gerenciador import Gerenciador
-from vetorizador import CountVectorizer, TFIDFVectorizer
-from classificador import NaiveBayes, SVM
-from util import analisar_sentimento
+from .gerenciador import Gerenciador
+from .vetorizador import CountVectorizer, TFIDFVectorizer
+from .classificador import NaiveBayes, SVM
+from .util import analisar_sentimento
 import pandas as pd
 
 
@@ -19,7 +19,7 @@ vetorizador4 = TFIDFVectorizer(revisoes,(1,4))
 #classificador1 = NaiveBayes("naive_bayes_1_1_pt2.pickle",vetorizador1,recomendacoes)
 #classificador2 = NaiveBayes("naive_bayes_1_4_pt2.pickle",vetorizador2,recomendacoes)
 #classificador3 = SVM("svm_1_1_pt2.pickle",vetorizador3,recomendacoes)
-classificador4 = SVM("svm_1_4_pt2.pickle",vetorizador4,recomendacoes)
+classificador4 = SVM(r"C:\Users\juans\OneDrive\Documentos\Webiaus\analisador\AI\svm_1_4_pt2.pickle",vetorizador4,recomendacoes)
 
 #print(classificador1.marcador())
 #print(classificador2.marcador())

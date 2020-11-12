@@ -24,11 +24,11 @@ class Gerenciador():
             print("As revisões foram extraídas, processadas e salvas.")
 
     def carregar(self):
-        with open("revisoes_processadas.pickle", "rb") as arquivo:
+        with open(r"C:\Users\juans\OneDrive\Documentos\Webiaus\analisador\AI\revisoes_processadas.pickle", "rb") as arquivo:
             self.revisoes, self.recomendacoes = load(arquivo)
 
     def salvar(self):
-        with open("revisoes_processadas.pickle", "wb") as arquivo:
+        with open(r"C:\Users\juans\OneDrive\Documentos\Webiaus\analisador\AI\revisoes_processadas.pickle", "wb") as arquivo:
             dump([self.revisoes, self.recomendacoes], arquivo)
 
     def extrair(self, caminho):
