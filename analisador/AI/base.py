@@ -1,7 +1,7 @@
-from .gerenciador import Gerenciador
-from .vetorizador import CountVectorizer, TFIDFVectorizer
-from .classificador import NaiveBayes, SVM
-from .util import analisar_sentimento
+from gerenciador import Gerenciador
+from vetorizador import CountVectorizer, TFIDFVectorizer
+from classificador import NaiveBayes, SVM
+from util import analisar_sentimento
 import pandas as pd
 
 
@@ -45,6 +45,6 @@ def analisador_sentimento(caminho):
     contagem = [pos,neg]
     return contagem
 
-#a = r"C:\Users\Juan Carlos\Documents\Webiaus\analisador\AI\frases.xlsx"
-#respostas = analisador_sentimento(a)
-#print(respostas)
+a = r"C:\Users\juans\OneDrive\Documentos\Webiaus\analisador\AI\frases.xlsx"
+respostas = analisador_sentimento(a)
+print(respostas)

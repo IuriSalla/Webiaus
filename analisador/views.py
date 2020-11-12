@@ -13,9 +13,6 @@ class AnaliseGraficoPageView(TemplateView):
 class UploadArquivoPageView(TemplateView):
     template_name = 'upload-arquivo.html'
 
-#def func_test(request):
-#    a = r"C:\Users\Juan Carlos\Documents\Webiaus\analisador\AI\frases.xlsx"
-#    respostas = base.analisador_sentimento(a)
-#    print(respostas)
-#    return render(request,'analise-grafico.html')
+def func_test(request):
+    return render(request,'analise-grafico.html',{})
 
