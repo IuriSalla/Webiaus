@@ -4,14 +4,12 @@ from .classificador import NaiveBayes, SVM
 from .util import analisar_sentimento
 import pandas as pd
 
-
 gerenciador = Gerenciador()
 revisoes = gerenciador.revisoes
 recomendacoes = gerenciador.recomendacoes
 
 #vetorizador1 = CountVectorizer(revisoes)
 #vetorizador2 = CountVectorizer(revisoes,(1,4))
-
 #vetorizador3 = TFIDFVectorizer(revisoes)
 vetorizador4 = TFIDFVectorizer(revisoes,(1,4))
 
@@ -45,6 +43,7 @@ def analisador_sentimento(caminho):
     contagem = [pos,neg]
     return contagem
 
-a = r"C:\Users\juans\OneDrive\Documentos\Webiaus\analisador\AI\frases.xlsx"
-respostas = analisador_sentimento(a)
-print(respostas)
+#a = r"C:\Users\juans\OneDrive\Documentos\Webiaus\analisador\AI\frases.xlsx"
+#respostas = analisador_sentimento(a)
+#print(respostas)
+
