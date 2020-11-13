@@ -22,7 +22,9 @@
                 <button type="submit" class="btn btn-primary" style="margin: 0 30px; width: 170px">Upload Teste</button> 
             </div>
         </form>
-
+        {% if resultado %}
+            <p>Teste do Envido da Resposta:<a>{{resultado}}</a></p>
+        {% endif %}
         
     {% else %}
     <br>

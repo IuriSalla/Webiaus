@@ -154,6 +154,8 @@ ACCOUNT_UNIQUE_EMAIL = True
 # Lembrar-se Acesso
 ACCOUNT_SESSION_REMEMBER = True
 
+#Indica o diretorio onde vão ficar salvos os arquivos
 MEDIA_ROOT = BASE_DIR / 'media'
 
+#Indica o Url para acessar o arquivo no navegador
 MEDIA_URL = '/media/'
