@@ -15,6 +15,9 @@ class AnaliseGraficoPageView(TemplateView):
 class UploadArquivoPageView(TemplateView):
     template_name = 'upload-arquivo.html'
 
+def home(request):
+    return render(request,'home.html',{})
+
 def grafico(request):
     if request.method == 'POST':
         print("Foioooo")
@@ -24,22 +27,14 @@ def grafico(request):
     return render(request,'grafico.html',{})
 
 def upload(request):
-    context = {}
     if request.method == 'POST':
         uploaded_file = request.FILES['arquivo']
-        print(uploaded_file.name)
-        print(uploaded_file.size)
         fs = FileSystemStorage()
         name = fs.save(uploaded_file.name, uploaded_file)
         url = fs.url(name)
         base_caminho = r"C:\Users\juans\OneDrive\Documentos\Webiaus\media'\'"
         base_caminho = base_caminho.replace("'",'')+name 
-        print(base_caminho)
         contagem = base.analisador_sentimento(base_caminho)
-        context['pos'] = contagem[0]
-        context['neg'] = contagem[1]
-
-        print(contagem)
     return render(request,'grafico.html',{
         'contagem': json.dumps(contagem)
     })

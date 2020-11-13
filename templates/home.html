@@ -10,7 +10,7 @@
     <br>
         <form method="post" enctype="multipart/form-data" action="{% url 'upload' %}"> <!-- FORMULÁRIO -->
             {% csrf_token %}
-            <h1 class="title-login">Análise Rápida</h1>
+            <h1 class="title-login">Análise Simples</h1>
             <div> <!--CAMPO 1 DE EMAIL -->
                 <div>
                 <input class="form-control" placeholder="Upload de Arquivo" type="file" name="arquivo">
@@ -18,8 +18,7 @@
             </div>
             <br>
             <div align="center">
-                <a href="{% url 'grafico' %}" type="submit" class="btn btn-primary" style="margin: 0 30px; width: 170px">Analisar</a>
-                <button type="submit" class="btn btn-primary" style="margin: 0 30px; width: 170px">Upload Teste</button> 
+                <button type="submit" class="btn btn-primary" style="margin: 0 30px; width: 170px">Analisar</button> 
             </div>
         </form>
     {% else %}
