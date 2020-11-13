@@ -1,5 +1,6 @@
 from django.shortcuts import render
 #from .AI import base
+from django.core.files.storage import FileSystemStorage
 # Create your views here.
 
 from django.views.generic import TemplateView
@@ -25,6 +26,8 @@ def upload(request):
     if request.method == 'POST':
         uploaded_file = request.FILES['arquivo']
         print(uploaded_file.name)
-        print(uploaded_file.size)   
+        print(uploaded_file.size)
+        fs = FileSystemStorage()
+        fs.save(uploaded_file.name, uploaded_file)
     return render(request,'home.html')
 
