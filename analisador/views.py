@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render
 from .AI import base
 from django.core.files.storage import FileSystemStorage
@@ -14,13 +15,13 @@ class AnaliseGraficoPageView(TemplateView):
 class UploadArquivoPageView(TemplateView):
     template_name = 'upload-arquivo.html'
 
-def func_test(request):
+def grafico(request):
     if request.method == 'POST':
         print("Foioooo")
     #essa função vai receber o arquivo/caminho e vai fazer a chamada da IA, depois do processamento
     #ela vai enviar para a 'analise-grafico.html' dois resultados , o número de frases positivas e negativas
     #os valores podem ser enviados em forma de vetor
-    return render(request,'analise-grafico.html',{})
+    return render(request,'grafico.html',{})
 
 def upload(request):
     context = {}
@@ -37,6 +38,9 @@ def upload(request):
         contagem = base.analisador_sentimento(base_caminho)
         context['pos'] = contagem[0]
         context['neg'] = contagem[1]
+
         print(contagem)
-    return render(request,'analise-grafico.html',context)
+    return render(request,'grafico.html',{
+        'contagem': json.dumps(contagem)
+    })
 

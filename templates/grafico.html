@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Resultados{% endblock %}
+
+{% block content %}
+<div id="container"></div>
+  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Resultados da Análise'
+        },
+        xAxis: {
+            categories: ['Positivos', 'Negativos']
+        },
+        series: [{
+            name: 'Comentários',
+            data: {{ contagem|safe }}
+        }]
+    });
+  </script>
+
+{% endblock %}
