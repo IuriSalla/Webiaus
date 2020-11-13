@@ -35,7 +35,8 @@ def upload(request):
         base_caminho = base_caminho.replace("'",'')+name 
         print(base_caminho)
         contagem = base.analisador_sentimento(base_caminho)
-        context['resultado'] = contagem
+        context['pos'] = contagem[0]
+        context['neg'] = contagem[1]
         print(contagem)
-    return render(request,'home.html',context)
+    return render(request,'analise-grafico.html',context)
 

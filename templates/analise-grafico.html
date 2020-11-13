@@ -78,8 +78,10 @@
                         </tr>        
                     </table>
                 </div>
-
-                <script>
+                {% if pos %}
+                    <p>Teste do Envido da Resposta:<a>{{pos}}</a>,<a>{{neg}}</a></p>
+                {% endif %}
+                <script> 
                     var ctx = document.getElementById('myChart').getContext('2d');
                     ctx.fillStyle="#7F7F00";
                     ctx.fillRect(0, 0, 150, 100);
@@ -90,13 +92,13 @@
                             datasets: [
                                 {
                                     label: "Positivo",
-                                    data: [40], // VARIAVEL RECEPTORA DOS DADOS DO SQL
+                                    data: [5], // VARIAVEL RECEPTORA DOS DADOS DO SQL
                                     borderWidth: 0.5,
                                     backgroundColor: ['#CAFF70'],
                                 },
                                 {
                                     label: "Negativo",
-                                    data: [30],
+                                    data: [5],
                                     borderWidth: 0.5,
                                     backgroundColor: '#CD5555',
                                     
@@ -132,6 +134,7 @@
                         }
                     });
                 </script>
+            
             </section>
         </div>
     </body>
