@@ -43,7 +43,4 @@ def analisador_sentimento(caminho):
     contagem = [pos,neg]
     return contagem
 
-#a = r"C:\Users\juans\OneDrive\Documentos\Webiaus\analisador\AI\frases.xlsx"
-#respostas = analisador_sentimento(a)
-#print(respostas)
 

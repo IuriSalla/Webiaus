@@ -13,13 +13,21 @@
             <h1 class="title-login">Análise Simples</h1>
             <div> <!--CAMPO 1 DE EMAIL -->
                 <div>
-                <input class="form-control" placeholder="Upload de Arquivo" type="file" name="arquivo">
+                <input class="form-control" placeholder="Upload de Arquivo" type="file" name="arquivo" accept=".xls,.xlsx" required>
                 </div>
             </div>
             <br>
             <div align="center">
                 <button type="submit" class="btn btn-primary" style="margin: 0 30px; width: 170px">Analisar</button> 
             </div>
+            {% if Flag %}
+                <br>
+                <div class="alert alert-danger" role="alert" align="center">
+                    <strong>Tipo de Arquivo Incorreto!</strong> 
+                    <br>
+                        Selecione um arquivo 'xls' ou 'xlsx'
+                </div>
+            {% endif %}
         </form>
     {% else %}
     <br>
