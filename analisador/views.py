@@ -2,6 +2,11 @@ import json
 from django.shortcuts import render
 from .AI import base
 from django.core.files.storage import FileSystemStorage
+from django.http import HttpResponse
+from django.views.generic import View
+from .utils import render_to_pdf
+from django.template.loader import get_template
+
 # Create your views here.
 
 from django.views.generic import TemplateView
@@ -17,6 +22,10 @@ class UploadArquivoPageView(TemplateView):
 
 def home(request):
     return render(request,'home.html',{})
+
+def gerador_pdf(request, *args, **kwargs):
+    pdf = render_to_pdf('grafico_pdf.html', {})
+    return HttpResponse(pdf, content_type='application/pdf')
 
 def upload(request):
     if request.method == 'POST':

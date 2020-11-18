@@ -6,7 +6,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
    path('',views.home, name = "home"),
-   path('upload/',views.upload, name = "upload")
+   path('upload/',views.upload, name = "upload"),
+   path('pdf/',views.gerador_pdf, name = "gerador_pdf")
 ]
 
 if settings.DEBUG:
