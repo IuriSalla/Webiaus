@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
    path('',views.home, name = "home"),
-   path('upload/',views.upload, name = "upload"),
+   path('resultado/',views.upload, name = "upload"),
    path('pdf/',views.gerador_pdf, name = "gerador_pdf")
 ]
 
