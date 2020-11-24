@@ -17,4 +17,6 @@ python
 >> nltk.download()
 (baixar 'all')
 
-Docker Hub: docker pull iurisalla/devops:latest
+Docker Hub -> 
+
+>> docker pull iurisalla/devops:latest
