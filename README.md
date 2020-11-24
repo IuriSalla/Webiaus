@@ -16,3 +16,5 @@ python
 >> import nltk
 >> nltk.download()
 (baixar 'all')
+
+Docker Hub: docker pull iurisalla/devops:latest
