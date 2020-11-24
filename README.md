@@ -11,12 +11,14 @@ python manage.py migrate  (SE NECESSÁRIO)
 *Rodar no terminal dentro da pasta AI*
 pip install -r requerimentos.txt
 
+
 python
 
 >> import nltk
 >> nltk.download()
 (baixar 'all')
 
-Docker Hub -> 
+
+Docker Hub
 
 >> docker pull iurisalla/devops:latest
