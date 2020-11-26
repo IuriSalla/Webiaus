@@ -3,9 +3,11 @@ Webiaus
 
 <p>Repositório criado para a aplicação Webiaus e o docker-compose deve ser executado dentro da pasta da aplicação onde contém o arquivo manage.py</p>
 
-<h5> Git Hub (Colaborador): <a href="https://hub.docker.com/repository/docker/iurisalla/devops">Webiaus</a></h5>
-<h5> Docker Hub: <a href="https://hub.docker.com/repository/docker/iurisalla/devops">Webiaus</a></h5>
+<h5> Git Hub (Colaborador):</p><a href="https://github.com/abyzziboll">Juan Carlos</a></h5>
 
+<h4> Docker Hub:<a href="https://hub.docker.com/repository/docker/iurisalla/devops">Docker Webiaus</a></h4>
+
+<p>docker-compose:</p>
 ```yaml
 services:
   web:
