@@ -26,3 +26,15 @@ OS X & Linux:
 - <a href="https://github.com/IuriSalla/Webiaus/blob/master/Dockerfile">Dockerfile</a>
 - <a href="https://github.com/IuriSalla/Webiaus/blob/master/django.txt">Django.txt</a>
 
+<p>
+  <br />
+</p>
+
+### Requisitos para Execução do Software
+> Alterar os caminhos absolutos dos arquivos citados abaixo para se ter 100% do software funcionando.
+
+- [Webiaus/blob/master/analisador/AI/base.py](https://github.com/IuriSalla/Webiaus/blob/master/analisador/AI/base.py) - Atentar a linha **20**.
+- [Webiaus/blob/master/analisador/AI/gerenciador.py](https://github.com/IuriSalla/Webiaus/blob/master/analisador/AI/gerenciador.py) - Atentar as linhas **27** e **31**.
+- [Webiaus/blob/master/analisador/views.py](https://github.com/IuriSalla/Webiaus/blob/master/analisador/views.py) - Atentar a linha **36**.
+
+
