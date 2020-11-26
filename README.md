@@ -1,13 +1,14 @@
-Webiaus
-==============
+# Webiaus
+> _Projeto voltado para Análise de Sentimentos com Polaridade em Nível de Sentença._
 
-<p>Repositório criado para a aplicação Webiaus e o docker-compose deve ser executado dentro da pasta da aplicação onde contém o arquivo manage.py</p>
+[Colaborador](https://github.com/abyzziboll)
 
-<h5> Git Hub (Colaborador):</p><a href="https://github.com/abyzziboll">Juan Carlos</a></h5>
+<h5> Git Hub (Colaborador): <a href="https://github.com/abyzziboll">Juan Carlos</a></h5>
+<h5> Docker Hub (Aplicação): <a href="https://hub.docker.com/repository/docker/iurisalla/devops">Webiaus</a></h5>
 
-<h4> Docker Hub:<a href="https://hub.docker.com/repository/docker/iurisalla/devops">Docker Webiaus</a></h4>
 
-<p>docker-compose:</p>
+
+<p>docker-compose:<a href="https://github.com/IuriSalla/Webiaus/blob/master/Dockerfile">docker-compose.yml</a></p>
 ```yaml
 services:
   web:
